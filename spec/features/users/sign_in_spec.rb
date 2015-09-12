@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Sign in', :devise do
 
   scenario 'user cannot sign in if not registered' do
-    signin('test@example.com', 'password123')
+    signin('test@example.com', 'passwo123')
     expect(page).to have_content I18n.t 'devise.failure.not_found_in_database', authentication_keys: 'email'
   end
 
