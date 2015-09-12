@@ -1,0 +1,27 @@
+       <div class="panel panel-success booking-table">
+          <div class="panel-heading">Book your table</div>
+          <div class="panel-body">
+          <%= form_for @booking do |f| %>
+                <table class="">
+                
+               <tr>
+                   <th><%= f.label 'table', 'Table' %></th>
+                   <th><%= f.label 'start_time', 'Start time' %></th>
+                   <th><%= f.label 'duration', 'Duration of booking in minutes' %></th>           
+               </tr>
+               <tr>
+                   <td><%= f.collection_select :table_id, [@table], :id, :name %></td>
+                   <td><%= f.datetime_select :start_time, { minute_step: 5 } %></td>
+                   <td><%= f.number_field 'duration', min: 10 %></td>           
+               </tr>
+               <tr>
+                <td colspan="3"><%= f.submit 'Submit', class: "btn btn-warning"%></td>
+               </tr>           
+               
+                </table>
+                <% end %> 
+          </div>
+        </div>
+       </div> 
+  
+

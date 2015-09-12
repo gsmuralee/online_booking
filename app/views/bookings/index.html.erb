@@ -1,0 +1,37 @@
+<div class="container booking-container">
+   <div>
+
+
+<div class="panel panel-success booking-table">
+          <div class="panel-heading">Bookings</div>
+          <div class="panel-body">
+            <table class="">
+                <tr>
+                   <th>Table</th>
+                   <th>Reference No.</th>
+                   <th>Start Time</th>
+                   <th>End Time</th>           
+               </tr>
+               <% @bookings.each do |booking| %>
+                  <tr>
+                    <td>
+                      <%= @table.name %>
+                    </td>
+                    <td>
+                      <%= booking.reference_number %>
+                    </td>
+                    <td>
+                      <%= booking.start_time.strftime('%e %b %Y %H:%M%p') %>
+                    </td>
+                    <td>
+                      <%= (booking.calculate_end_time + 1).strftime('%e %b %Y %H:%M%p') %>
+                    </td>
+                    <td><%= link_to "Delete", booking_path(booking), data: { confirm: 'Are you sure?' }, method: :delete %>
+                    </td>
+                  </tr>  
+               <% end %> 
+            </table>
+          </div>
+        </div>
+   </div>
+        </div>       

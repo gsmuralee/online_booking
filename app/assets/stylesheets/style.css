@@ -1,0 +1,133 @@
+body{
+    
+    background-image: url(/assets/bg.png);
+    overflow-y: scroll;
+}
+
+.container{
+    margin-top: 100px;
+}
+.poolcafe-header{
+    width: 100%;
+    background-color: #282c2f;
+    height: 60px;    
+  
+}
+
+.logo-name{
+    
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 60px;
+    width: 280px;
+}
+.logo-name, .logo-name:hover{
+    color: #fff;
+    font-size: 28px;
+    line-height: 60px;
+    padding-left: 20px;
+    text-decoration: none;
+    float: left;
+    font-weight: bold;
+}
+.login-box{
+    background-color:#df5757;     
+    width:300px; 
+    position:absolute;     
+    right:0; 
+    z-index:99; 
+    padding:20px;
+    border-radius: 0 0 4px 4px;   
+    -moz-box-shadow: 0 0 6px #000;
+    -webkit-box-shadow: 0 0 6px #000;
+     box-shadow: 0 0 6px #000;      
+    }
+.login-box .input-group, .login-container .input-group{
+    margin-bottom: 6px;
+}
+.login-box .btn, .login-container .btn{
+    float:right;
+}
+.login-box .btn-link{
+    color:#fafafa;
+}
+
+.login-container{
+    width: 30%;
+    color: #2b322a;
+    font-size: 13px;
+    margin-top: 120px;
+}
+
+.booking-container{
+    width: 800px;   
+}
+.booking-table{
+    color: #222;
+    width: 100%;
+    margin: 0 auto;
+}
+.booking-table table{
+    width: 100%;
+}
+.booking-table td, .booking-table th{
+    padding: 6px;
+}
+
+.booking-table .btn{
+    float: right;
+}
+.calendar-chart{
+    margin: 40px 0;
+    background-color: #fff;
+    border-radius: 4px;
+}
+#calendar {
+    padding: 20px 20px 20px 20px;
+}
+.mp-navbar .navbar-nav > li > a {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.mp-navbar{    
+    margin:0 30px;
+}
+
+.mp-navbar ul.navbar-nav > li{    
+    border-right:1px solid #454f5a;
+    border-left:1px solid #222426;
+}
+.mp-navbar ul.navbar-nav > li:last-child{    
+    border-right:0 solid #a23c3c;   
+}
+.mp-navbar li a{
+    color: #fafafa;
+}
+
+.mp-navbar .nav .open > a, .mp-navbar .nav .open > a:focus, .mp-navbar .nav .open > a:hover, .mp-navbar .nav > li a:hover {
+    background-color: #363c43;
+    border-color: #222426;
+}
+.poolcafe-header .dropdown-menu,  .poolcafe-header .nav > li > a:focus, .poolcafe-header .nav > li > a:hover{
+    background-color: #363c43;    
+}
+.poolcafe-header .dropdown-menu > li > a{
+    line-height: 30px;
+}
+.poolcafe-header .dropdown-menu > li > a:hover{
+    background-image: linear-gradient(to bottom, #58616c 100%, #58616c 100% );    
+}
+.mp-navbar .active{
+    background-color: #363c43;
+}
+
+.mp-footer{
+    color: #2b322a;
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    margin-top: 50px;
+}
+
+
