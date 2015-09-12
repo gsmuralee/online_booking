@@ -43,6 +43,8 @@ group :development, :test do
   gem 'byebug'
   gem "rspec-rails"
   gem 'shoulda'
+  gem 'capybara'
+  gem 'database_cleaner'
 end
 
 group :development do
