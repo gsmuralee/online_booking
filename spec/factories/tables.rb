@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :table do
-    name "Table_1"
-    code "A45679DF"
+    name Faker::Team.name
+    code Faker::Lorem.characters(8)
   end
 
 end

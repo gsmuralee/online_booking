@@ -11,6 +11,7 @@ class Booking < ActiveRecord::Base
 
     before_validation :calculate_end_time
   
+    scope :order_by,      ->(start_time) {where("end_time >= ?", Time.now).order(start_time)}
     scope :time_constraint, ->(c1, f1, c2, f2) do
       return nil unless f1 && f2
       where "%s ? AND %s ?" % [c1, c2], f1, f2
@@ -62,6 +63,17 @@ class Booking < ActiveRecord::Base
 	      self.end_time = start_time + (duration.minutes - 1)
 	    end
     end
+
+
+    def as_json(options = {})  
+	   {  
+	    :id => self.id,  
+	    :start => self.start_time,  
+	    :end => self.end_time + 1,  
+	    :recurring => false, 
+	    :allDay => false
+	   }  
+    end  
 
  	private
 

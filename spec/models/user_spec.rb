@@ -5,7 +5,7 @@ describe User do
   subject { @user }
 
   it "#email returns a string" do
-    expect(@user.email).to match 'user@example.com'
+     @user.email.should match 'user@example.com'
   end
 
   it { should respond_to(:email) }
