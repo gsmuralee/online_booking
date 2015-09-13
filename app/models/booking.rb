@@ -44,7 +44,7 @@ class Booking < ActiveRecord::Base
 
     def start_date_cannot_be_in_the_past
 	    if start_time && start_time < DateTime.now + (10.minutes)
-	      errors.add(:start_time, 'must be at least 15 minutes from present time')
+	      errors.add(:start_time, 'must be at least 10 minutes from present time')
 	    end
     end
 

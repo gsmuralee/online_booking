@@ -21,10 +21,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
-  # GET /bookings/1/edit
-  def edit
-  end
-
   # POST /bookings
   # POST /bookings.json
   def create
@@ -33,25 +29,10 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.table = @table  
     if @booking.save
+      flash[:notice] = 'Your booking was created succesfully'
       redirect_to "/"
     else
       render 'new'
-    end
-  end
-
-  # PATCH/PUT /bookings/1
-  # PATCH/PUT /bookings/1.json
-  def update
-    @booking = Booking.find(params[:id])
-    if @booking.update(params[:booking].permit(:start_time, :duration))
-      flash[:notice] = 'Your booking was updated succesfully'
-      if request.xhr?
-        render json: {status: :success}.to_json
-      else
-        redirect_to '/'
-      end
-    else
-      render 'edit'
     end
   end
 
@@ -69,12 +50,12 @@ class BookingsController < ApplicationController
   private
 
     def save booking
-        if @booking.save
-          flash[:notice] = 'booking added'
-          redirect_to resource_booking_path(@resource, @booking)
-        else
-          render 'new'
-        end
+      if @booking.save
+        flash[:notice] = 'booking added'
+        redirect_to resource_booking_path(@resource, @booking)
+      else
+        render 'new'
+      end
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_booking

@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 describe Booking do
-   before(:each) { 
+  before(:each) { 
     @booking = FactoryGirl.create :booking
    	@user, @table = @booking.user,  @booking.table
     @user1 = FactoryGirl.create(:user, email:"test@factory.com", password: "newpassword-1")
-   }
+  }
 
   it { should belong_to(:user) }
   it { should belong_to(:table) }
