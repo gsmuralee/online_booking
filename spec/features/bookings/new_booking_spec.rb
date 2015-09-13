@@ -38,7 +38,7 @@ feature 'new', :booking do
     signin(user.email, user.password)
     page.should have_content 'Book your table'
     visit bookings_path
-    page.should have_content 'Bookings List'
+    page.should have_content 'Your Bookings List'
   end
 
 end
