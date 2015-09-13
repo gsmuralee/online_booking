@@ -25,7 +25,7 @@ class Booking < ActiveRecord::Base
     
     scope :booking_cooling_period, ->(start_time, end_time, user_id) do 
         return nil unless start_time && end_time
-        where("start_time < ? && end_time > ? && user_id = ?", end_time + (60.minutes),  start_time - (60.minutes), user_id)
+        where("start_time < ? AND end_time > ? AND user_id = ?", end_time + (60.minutes),  start_time - (60.minutes), user_id)
     end
 
     def overlaps
