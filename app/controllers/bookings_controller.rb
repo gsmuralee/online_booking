@@ -62,11 +62,6 @@ class BookingsController < ApplicationController
       @booking = Booking.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def booking_params
-      params.require(:booking).permit(:start_time, :duration)
-    end
-
     def generate_uuid
          uuid = Time.now.strftime("%Y%m%d%H%M%S%L")
          uuid.to_i.to_s(36).upcase
